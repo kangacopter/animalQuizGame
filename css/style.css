@@ -1,0 +1,47 @@
+html {
+    height: 100%;
+}
+
+body {
+    height: auto;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background: linear-gradient(#C3A7CF, #F9D4D4);
+    overflow-y: hidden;
+}
+
+ header {
+    font-family: "Arial Rounded MT Bold";
+    font-size: 2em;
+    text-align: center;
+    padding: 0.8em;
+    margin-top: 0.8em;
+} 
+
+#goBackButton {
+    margin-top: 1em;
+    margin-left: 1em;
+}
+
+.iconColor {
+    color: #000000;
+}
+
+#chooseAnimal {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 auto;
+    width: 80%;
+}
+
+.animalIcon {
+    height: 8em;
+    width: 8em;
+    border-radius: 50%;
+    background-color: #623392;
+    margin: 2em;
+    text-align: center;
+
+}
