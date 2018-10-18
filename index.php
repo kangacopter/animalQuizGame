@@ -12,20 +12,15 @@
 
     <header>Choose the animal based on dice roll!</header>
 
-    <!-- Animal icon menu for 12 animal question choices -->
+    <!-- Animal icon menu for 6 animal question choices -->
     <div id="chooseAnimal">
         <div class="animalIcon" id="raccoon">&nbsp;raccoon</div>
         <div class="animalIcon" id="opossum">&nbsp;opossum</div>
-        <div class="animalIcon" id="barnOwl">&nbsp;barn owl</div>
         <div class="animalIcon" id="bat">&nbsp;bat</div>
         <div class="animalIcon" id="skunk">&nbsp;skunk</div>
         <div class="animalIcon" id="beaver">&nbsp;beaver</div>
-        <div class="animalIcon" id="turtle">&nbsp;turtle</div>
-        <div class="animalIcon" id="fox">&nbsp;fox</div>
+        <!--<div class="animalIcon" id="fox">&nbsp;fox</div> We may use this instead of beaver-->
         <div class="animalIcon" id="groundhog">&nbsp;groundhog</div>
-        <div class="animalIcon" id="deer">&nbsp;deer</div>
-        <div class="animalIcon" id="squirrel">&nbsp;squirrel</div>
-        <div class="animalIcon" id="wildCard">&nbsp;wild card</div>
 
     </div>
 
