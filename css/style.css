@@ -27,6 +27,10 @@ body {
     position: absolute;
 }
 
+#goBackButton:hover .iconColor {
+    color: #F9D4D4;
+    }
+
 .iconColor {
     color: #000000;
 }
