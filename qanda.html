@@ -10,23 +10,32 @@
 </head>
 
 <body>
-    <nav id ="goBackButton">
+    <nav id="goBackButton">
         <span class="iconColor"><i class="fas fa-arrow-circle-left fa-3x"></i></span>
     </nav>
     
-    <header>(Animal) Question!</header>
+    <header>
+        <div id="animalIconQuestion"> wtf</div>
+        <h1>(Animal) Question!</h1>
+    </header>
 
     <nav id ="goBackButton">
         <!-- insert a go back button here -->
     </nav>
 
     <!-- Question section -->
-    <div id="animalIconQuestion"></div>
-    <div id="question"></div>
+    <div id="questionSection">
+        <div class="textBox" id="questionBox"><p>Sample animal question</p></div>
+    </div>
 
     <!-- Answer section -->
-    <div id="answer"></div>
-    <div id="animalIconAnswer"></div>
+    <div id="answerSection">    
+        <div class="textBox" id="userAnswerButtons">
+            <button id="true">True</button>
+            <button id="false">False</button>
+        </div>
+        <div class="textBox" id="answerBox"><p>Typical animal answer (will be true or false with explanation)</p></div>
+    </div>
     
 
     <footer></footer>
