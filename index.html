@@ -11,45 +11,85 @@
 
 <body>
     <nav id ="goBackButton">
-        <a href="#"><span class="iconColor"><i class="fas fa-arrow-circle-left fa-3x"></i></span></a>
+        <a href="index.html"><span class="iconColor"><i class="fas fa-arrow-circle-left fa-3x"></i></span></a>
     </nav>
 
-    <header>
+    <header id="headerTitle">
         <h1>Roll the dice!</h1>
     </header>
 
     <!-- Animal icon menu for 6 animal question choices -->
     <div id="chooseAnimal">
+        <a href="javascript:void(0)" onclick="displayQuestion(raccoon);">
         <div class="animalIcon" id="raccoon">
             <div class="animalLabel">Raccoon</div>
             <img src="img/raccoonIcon.svg" alt="The head of a cute raccoon.">
             <div class="animalNumber">1</div>
         </div>
+        </a>
+
+        <a href="javascript:void(0)" onclick="displayQuestion(opossum);">
         <div class="animalIcon" id="opossum">
             <div class="animalLabel">Opossum</div>
             <img src="img/raccoonIcon.svg" alt="The head of a cute opossum.">
             <div class="animalNumber">2</div>
         </div>
+        </a>
+
+        <a href="javascript:void(0)" onclick="displayQuestion(groundhog);">
         <div class="animalIcon" id="groundhog">
                 <div class="animalLabel">Groundhog</div>
                 <img src="img/raccoonIcon.svg" alt="The head of a cute groundhog.">
                 <div class="animalNumber">3</div>
         </div>
+        </a>
+
+        <a href="javascript:void(0)" onclick="displayQuestion(bat);">
         <div class="animalIcon" id="bat">
                 <div class="animalLabel">Bat</div>
                 <img src="img/raccoonIcon.svg" alt="The head of a cute bat.">
                 <div class="animalNumber">4</div>
         </div>
+        </a>
+
+        <a href="javascript:void(0)" onclick="displayQuestion(skunk);">
         <div class="animalIcon" id="skunk">
                 <div class="animalLabel">Skunk</div>
                 <img src="img/raccoonIcon.svg" alt="The head of a cute skunk.">
                 <div class="animalNumber">5</div>
         </div>
+        </a>
+
+        <a href="javascript:void(0)" onclick="displayQuestion(beaver);">
         <div class="animalIcon" id="beaver">
                 <div class="animalLabel">Beaver</div>
                 <img src="img/raccoonIcon.svg" alt="The head of a cute beaver.">
                 <div class="animalNumber">6</div>
         </div>
+        </a>
+    </div>
+
+    <!-- Icon displayed for questions -->
+    <div id="animalIconQuestion">
+            <div class="animalIcon" id="raccoon">
+                <div class="animalLabel">Raccoon</div>
+                <img src="img/raccoonIcon.svg" alt="The head of a cute raccoon.">
+                <div class="animalNumber">1</div>
+            </div>
+        </div>
+
+     <!-- Question section -->
+     <div id="questionSection">
+        <div class="textBox" id="questionBox"><p>Sample animal question</p></div>
+        <div class="textBox" id="userAnswerButtons">
+            <button id="true">true</button>
+            <button id="false">false</button>
+        </div>
+    </div>
+    
+    <!-- Answer section -->
+    <div id="answerSection">    
+        <div class="textBox" id="answerBox"><p>Typical animal answer (will be true or false with explanation)</p></div>
     </div>
 
     <footer></footer>

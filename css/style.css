@@ -30,6 +30,7 @@ h1 {
     top: 0.3em;
     left: 0.3em;
     position: absolute;
+    display: none;
 }
 
 #goBackButton:hover .iconColor {
@@ -47,6 +48,10 @@ h1 {
     justify-content: center;
     margin: 0 auto;
     width: 80%;
+}
+
+#chooseAnimal a {
+    text-decoration: none;
 }
 
 .animalIcon {
@@ -78,6 +83,7 @@ h1 {
     margin: 0 auto;
     font-family: "Arial Rounded MT Bold", Arial, sans-serif;
     font-size: 1.3em;
+    padding: 2px;
 }
 
 .animalNumber {
@@ -93,10 +99,14 @@ h1 {
 
 }
 
-/* Question section */
+/* Question and Answer sections */
 
 #animalIconQuestion .animalIcon {
-    margin: 0 auto;
+    margin: 2em auto;
+}
+
+#animalIconQuestion {
+    display: none;
 }
 
 .textBox {
@@ -113,15 +123,6 @@ h1 {
 
 }
 
-#questionSection {
-    margin: 0 auto;
-}
-
-/* Answer section */
-#answerSection {
-
-}
-
 button {
     border: 5px solid #623392;
     background: #C3A7CF;
@@ -135,4 +136,14 @@ button {
 
 button:hover {
     background: #F9D4D4;
+}
+
+/* Toggle */
+
+#questionSection {
+    display: none;
+}
+
+#answerSection {
+    display: none;
 }

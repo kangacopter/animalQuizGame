@@ -1,16 +1,54 @@
 // Function to build the question display (question, buttons for true false)
-function displayQuestion() {
-    // Show Q icon
-
-    // Show question
-
+function displayQuestion(animal) {
+    // Show Q icon, back button, remove menu
+    document.getElementById('chooseAnimal').style.display = "none";
+    document.getElementById('headerTitle').style.display = "none";
+    document.getElementById('goBackButton').style.display  = "block";
+    
+    switch (animal) {
+        case raccoon:
+            document.getElementById('animalIconQuestion').style.display = "block";
+            document.getElementById('questionSection').style.display = "block";
+            document.getElementById('questionBox').innerHTML = "<p>Question 1?</p>";
+            break;
+        case opossum:
+            document.getElementById('animalIconQuestion').style.display = "block";
+            document.getElementById
+            document.getElementById('questionSection').style.display = "block";
+            document.getElementById('questionBox').innerHTML = "<p>Opossum question?</p>";
+            break;
+        case groundhog:
+            document.write('groundhog');
+            break;
+        case bat:
+            document.write('bat');
+            break;
+        case skunk:
+            document.write('skunk');
+            break;
+        case beaver:
+            document.write('beaver');
+            break;
+        default:
+            document.write('you done fucked up');
+    }
 }
 
 // Displays answer box, intially hidden
 function displayAnswer() {
-    // Show A icon 
+    // Show answer, remove buttons
+    document.getElementById('userAnswerButtons').style.display = "none";
+    document.getElementById('answerSection').style.display = "block";
 
-    // Show answer
+}
+
+// Get random number for question
+function getRandom() {
+
+}
+
+// Generate question
+function getQuestion(animal) {
 
 }
 
