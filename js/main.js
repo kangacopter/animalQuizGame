@@ -7,28 +7,34 @@ function displayQuestion(animal) {
     
     switch (animal) {
         case raccoon:
+            var animalArray = getAnimalData("Raccoon");
             displayAnimalIcon("Raccoon", "1");
-            buildQuestion("Raccoon");
+            buildQuestion(animalArray);
             break;
         case opossum:
+            var animalArray = getAnimalData("Opossum");
             displayAnimalIcon("Opossum", "2");
-            buildQuestion("Opossum");
+            buildQuestion(animalArray);
             break;
         case groundhog:
+            var animalArray = getAnimalData("Groundhog");
             displayAnimalIcon("Groundhog", "3");
-            buildQuestion("Groundhog");
+            buildQuestion(animalArray);
             break;
         case bat:
+            var animalArray = getAnimalData("Bat");
             displayAnimalIcon("Bat", "4");
-            buildQuestion("Bat");
+            buildQuestion(animalArray);
             break;
         case skunk:
+            var animalArray = getAnimalData("Skunk");
             displayAnimalIcon("Skunk", "5");
-            buildQuestion("Skunk");
+            buildQuestion(animalArray);
             break;
         case beaver:
+            var animalArray = getAnimalData("Beaver");
             displayAnimalIcon("Beaver", "6");
-            buildQuestion("Beaver");
+            buildQuestion(animalArray);
             break;
         default:
             document.write("Something went wrong!");
@@ -36,32 +42,31 @@ function displayQuestion(animal) {
 }
 
 // Build answer box
-function buildAnswer(answer, animal, questionNum) {
+function buildAnswer(answer, animalArray, questionNum) {
     document.getElementById('userAnswerButtons').style.display = "none";
     document.getElementById('answerSection').style.display = "block";
-    var correctAns = getAnswer(animal, questionNum);
+
+    var correctAns = getAnswer(animalArray, questionNum);
     if ( answer === correctAns) {
-        var answerExp = getAnswerExp(animal, questionNum, "correct");
-        document.getElementById('answerBox').innerHTML = "<p>The answer was correct</p>"
+        document.getElementById('answerBox').innerHTML = animalArray[questionNum][2];
     } else {
-        var answerExp = getAnswerExp(animal, questionNum, "incorrect");
-        document.getElementById('answerBox').innerHTML = "<p>The answer was incorrect</p>"
+        document.getElementById('answerBox').innerHTML = animalArray[questionNum][3];
     }
 }
 
 // Build question box
-function buildQuestion(animal) {
+function buildQuestion(animalArray) {
     document.getElementById('questionSection').style.display = "block";
 
     var questionNumber = getRandom(0, 4);
-    var question = getQuestion(animal, questionNumber);
+    var question = getQuestion(animalArray, questionNumber);
 
     document.getElementById('questionBox').innerHTML = question;
 
     var trueButton = document.getElementById('true');
     var falseButton = document.getElementById('false');
-    trueButton.addEventListener('click', function() { buildAnswer(true, animal, questionNumber); });
-    falseButton.addEventListener('click', function() { buildAnswer(false, animal, questionNumber); });
+    trueButton.addEventListener('click', function() { buildAnswer(true, animalArray, questionNumber); });
+    falseButton.addEventListener('click', function() { buildAnswer(false, animalArray, questionNumber); });
 }
 
 // Get random number for choosing question in 2D array
@@ -70,82 +75,40 @@ function getRandom(min, max) {
 }
 
 // Generate question
-function getQuestion(animal, questionNum) {
-    switch(animal) {
-        case "Raccoon":
-            return q_raccoon[questionNum][0];
-            break;
-        case "Opossum":
-            return q_opossum[questionNum][0];
-            break;
-        case "Groundhog":
-            return q_groundhog[questionNum][0];
-            break;
-        case "Bat":
-            return q_bat[questionNum][0];
-            break;
-        case "Skunk":
-            return q_skunk[questionNum][0];
-            break;
-        case "Beaver":
-            return q_beaver[questionNum][0];
-            break;
-        default:
-            return "ERROR! ERROR! MISTAKES WERE MADE";
-    }
+function getQuestion(animalArray, questionNum) {
+    return animalArray[questionNum][0];
 }
 
 // Get answer
-function getAnswer(animal, questionNum) {
-    switch(animal) {
-        case "Raccoon":
-            return q_raccoon[questionNum][1];
-            break;
-        case "Opossum":
-            return q_opossum[questionNum][1];
-            break;
-        case "Groundhog":
-            return q_groundhog[questionNum][1];
-            break;
-        case "Bat":
-            return q_bat[questionNum][1];
-            break;
-        case "Skunk":
-            return q_skunk[questionNum][1];
-            break;
-        case "Beaver":
-            return q_beaver[questionNum][1];
-            break;
-        default:
-            return "ERROR! ERROR! MISTAKES WERE MADE";
-    }
+function getAnswer(animalArray, questionNum) {
+    return animalArray[questionNum][1];
 }
 
-// // Function to return the array for specific animal
-// function getAnimalData(animal) {
-//     switch(animal) {
-//         case "Raccoon":
-//             return q_raccoon;
-//             break;
-//         case "Opossum":
-//             return q_opossum;
-//             break;
-//         case "Groundhog":
-//             return q_groundhog;
-//             break;
-//         case "Bat":
-//             return q_bat;
-//             break;
-//         case "Skunk":
-//             return q_skunk;
-//             break;
-//         case "Beaver":
-//             return q_beaver;
-//             break;
-//         default:
-//             return "ERROR! ERROR! MISTAKES WERE MADE";
-//     }
-// } 
+// Function to return the array for specific animal
+function getAnimalData(animal) {
+    switch(animal) {
+        case "Raccoon":
+            return q_raccoon;
+            break;
+        case "Opossum":
+            return q_opossum;
+            break;
+        case "Groundhog":
+            return q_groundhog;
+            break;
+        case "Bat":
+            return q_bat;
+            break;
+        case "Skunk":
+            return q_skunk;
+            break;
+        case "Beaver":
+            return q_beaver;
+            break;
+        default:
+            return "ERROR! Failure to return proper array.";
+    }
+} 
 
 // Display animal icon for questions
 function displayAnimalIcon(animal, num) {
