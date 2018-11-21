@@ -119,19 +119,19 @@ function displayAnimalIcon(animal, num) {
 
 // Collection of animal question arrays
 var q_raccoon = [
-    [ "Raccoon babies are called \"Kits\"", true, "If correct", "If NOT correct" ],
-    [ "Question 2 for raccoon", true, "If correct", "If NOT correct" ],
-    [ "Question 3 for raccoon", true, "If correct", "If NOT correct" ],
-    [ "Question 4 for raccoon", true, "If correct", "If NOT correct" ],
-    [ "Question 5 for raccoon", true, "If correct", "If NOT correct" ]
+    [ "Raccoon babies are called \"Kits.\"", true, "Correct!", "Incorrect- raccoon babies are called \"kits!\"" ],
+    [ "Raccoons are nocturnal.", true, "Correct!", "Incorrect. Raccoons are nocturnal, meaning they are mostly active at night." ],
+    [ "Raccoons closest animal relative is the common housecat.", false, "Correct!", "Incorrect! Raccoons are most closely related to the Ring-tailed Cat." ],
+    [ "Raccoons have opposable thumbs, like humans do.", false, "Correct!", "Incorrect, raccoons have paws that are similar to human hands, but they do not have opposable thumbs." ],
+    [ "Young raccoons stay with their mothers for 1 month.", false, "Correct!", "Incorrect, young raccoons stay with their mothers up to a year!" ]
 ]
 
 var q_opossum = [
-    [ "Question 1 for opossum", false, "If correct", "If NOT correct" ],
-    [ "Question 2 for opossum", false, "If correct", "If NOT correct" ],
-    [ "Question 3 for opossum", false, "If correct", "If NOT correct" ],
-    [ "Question 4 for opossum", false, "If correct", "If NOT correct" ],
-    [ "Question 5 for opossum", false, "If correct", "If NOT correct" ]
+    [ "Opossums are the only marsupial native to Kentucky.", true, "Correct!", "Incorrect. Opossums are the only marsupial native to Kentucky." ],
+    [ "Opossums live in large groups.", false, "Correct!", "Incorrect. Opossums live alone or in pairs." ],
+    [ "Female opossums have 2 to 3 babies in a litter.", false, "Correct, they have 8 to 13 babies per litter!", "Incorrect. Female opossums have 8 to 13 babies per litter!" ],
+    [ "Question 4 for opossum", false, "Correct!", "If NOT correct" ],
+    [ "Question 5 for opossum", false, "Correct!", "If NOT correct" ]
 ]
 
 var q_bat = [
