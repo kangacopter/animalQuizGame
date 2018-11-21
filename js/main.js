@@ -35,18 +35,33 @@ function displayQuestion(animal) {
     }
 }
 
-// Build answer box - show answer, remove buttons
-function buildAnswer() {
+// Build answer box
+function buildAnswer(answer, animal, questionNum) {
     document.getElementById('userAnswerButtons').style.display = "none";
     document.getElementById('answerSection').style.display = "block";
-
+    var correctAns = getAnswer(animal, questionNum);
+    if ( answer === correctAns) {
+        var answerExp = getAnswerExp(animal, questionNum, "correct");
+        document.getElementById('answerBox').innerHTML = "<p>The answer was correct</p>"
+    } else {
+        var answerExp = getAnswerExp(animal, questionNum, "incorrect");
+        document.getElementById('answerBox').innerHTML = "<p>The answer was incorrect</p>"
+    }
 }
 
 // Build question box
 function buildQuestion(animal) {
     document.getElementById('questionSection').style.display = "block";
-    var question = getQuestion(animal, getRandom(0, 4));
+
+    var questionNumber = getRandom(0, 4);
+    var question = getQuestion(animal, questionNumber);
+
     document.getElementById('questionBox').innerHTML = question;
+
+    var trueButton = document.getElementById('true');
+    var falseButton = document.getElementById('false');
+    trueButton.addEventListener('click', function() { buildAnswer(true, animal, questionNumber); });
+    falseButton.addEventListener('click', function() { buildAnswer(false, animal, questionNumber); });
 }
 
 // Get random number for choosing question in 2D array
@@ -80,6 +95,58 @@ function getQuestion(animal, questionNum) {
     }
 }
 
+// Get answer
+function getAnswer(animal, questionNum) {
+    switch(animal) {
+        case "Raccoon":
+            return q_raccoon[questionNum][1];
+            break;
+        case "Opossum":
+            return q_opossum[questionNum][1];
+            break;
+        case "Groundhog":
+            return q_groundhog[questionNum][1];
+            break;
+        case "Bat":
+            return q_bat[questionNum][1];
+            break;
+        case "Skunk":
+            return q_skunk[questionNum][1];
+            break;
+        case "Beaver":
+            return q_beaver[questionNum][1];
+            break;
+        default:
+            return "ERROR! ERROR! MISTAKES WERE MADE";
+    }
+}
+
+// // Function to return the array for specific animal
+// function getAnimalData(animal) {
+//     switch(animal) {
+//         case "Raccoon":
+//             return q_raccoon;
+//             break;
+//         case "Opossum":
+//             return q_opossum;
+//             break;
+//         case "Groundhog":
+//             return q_groundhog;
+//             break;
+//         case "Bat":
+//             return q_bat;
+//             break;
+//         case "Skunk":
+//             return q_skunk;
+//             break;
+//         case "Beaver":
+//             return q_beaver;
+//             break;
+//         default:
+//             return "ERROR! ERROR! MISTAKES WERE MADE";
+//     }
+// } 
+
 // Display animal icon for questions
 function displayAnimalIcon(animal, num) {
     document.getElementById('animalIconQuestion').style.display = "block";
@@ -89,49 +156,49 @@ function displayAnimalIcon(animal, num) {
 
 // Collection of animal question arrays
 var q_raccoon = [
-    [ "Question 1 for raccoon", true, "Answer explaination" ],
-    [ "Question 2 for raccoon", true, "Answer explaination" ],
-    [ "Question 3 for raccoon", true, "Answer explaination" ],
-    [ "Question 4 for raccoon", true, "Answer explaination" ],
-    [ "Question 5 for raccoon", true, "Answer explaination" ]
+    [ "Raccoon babies are called \"Kits\"", true, "If correct", "If NOT correct" ],
+    [ "Question 2 for raccoon", true, "If correct", "If NOT correct" ],
+    [ "Question 3 for raccoon", true, "If correct", "If NOT correct" ],
+    [ "Question 4 for raccoon", true, "If correct", "If NOT correct" ],
+    [ "Question 5 for raccoon", true, "If correct", "If NOT correct" ]
 ]
 
 var q_opossum = [
-    [ "Question 1 for opossum", false, "Answer explaination" ],
-    [ "Question 2 for opossum", false, "Answer explaination" ],
-    [ "Question 3 for opossum", false, "Answer explaination" ],
-    [ "Question 4 for opossum", false, "Answer explaination" ],
-    [ "Question 5 for opossum", false, "Answer explaination" ]
+    [ "Question 1 for opossum", false, "If correct", "If NOT correct" ],
+    [ "Question 2 for opossum", false, "If correct", "If NOT correct" ],
+    [ "Question 3 for opossum", false, "If correct", "If NOT correct" ],
+    [ "Question 4 for opossum", false, "If correct", "If NOT correct" ],
+    [ "Question 5 for opossum", false, "If correct", "If NOT correct" ]
 ]
 
 var q_bat = [
-    [ "Question 1 for bat", true, "Answer explaination" ],
-    [ "Question 2 for bat", true, "Answer explaination" ],
-    [ "Question 3 for bat", true, "Answer explaination" ],
-    [ "Question 4 for bat", true, "Answer explaination" ],
-    [ "Question 5 for bat", true, "Answer explaination" ]
+    [ "Question 1 for bat", true, "If correct", "If NOT correct" ],
+    [ "Question 2 for bat", true, "If correct", "If NOT correct" ],
+    [ "Question 3 for bat", true, "If correct", "If NOT correct" ],
+    [ "Question 4 for bat", true, "If correct", "If NOT correct" ],
+    [ "Question 5 for bat", true, "If correct", "If NOT correct" ]
 ]
 
 var q_skunk = [
-    [ "Question 1 for skunk", true, "Answer explaination" ],
-    [ "Question 2 for skunk", true, "Answer explaination" ],
-    [ "Question 3 for skunk", true, "Answer explaination" ],
-    [ "Question 4 for skunk", true, "Answer explaination" ],
-    [ "Question 5 for skunk", true, "Answer explaination" ]
+    [ "Question 1 for skunk", true, "If correct", "If NOT correct" ],
+    [ "Question 2 for skunk", true, "If correct", "If NOT correct" ],
+    [ "Question 3 for skunk", true, "If correct", "If NOT correct" ],
+    [ "Question 4 for skunk", true, "If correct", "If NOT correct" ],
+    [ "Question 5 for skunk", true, "If correct", "If NOT correct" ]
 ]
 
 var q_beaver = [
-    [ "Question 1 for beaver", true, "Answer explaination" ],
-    [ "Question 2 for beaver", true, "Answer explaination" ],
-    [ "Question 3 for beaver", true, "Answer explaination" ],
-    [ "Question 4 for beaver", true, "Answer explaination" ],
-    [ "Question 5 for beaver", true, "Answer explaination" ]
+    [ "Question 1 for beaver", true, "If correct", "If NOT correct" ],
+    [ "Question 2 for beaver", true, "If correct", "If NOT correct" ],
+    [ "Question 3 for beaver", true, "If correct", "If NOT correct" ],
+    [ "Question 4 for beaver", true, "If correct", "If NOT correct" ],
+    [ "Question 5 for beaver", true, "If correct", "If NOT correct" ]
 ]
 
 var q_groundhog = [
-    [ "Question 1 for groundhog", true, "Answer explaination" ],
-    [ "Question 2 for groundhog", true, "Answer explaination" ],
-    [ "Question 3 for groundhog", true, "Answer explaination" ],
-    [ "Question 4 for groundhog", true, "Answer explaination" ],
-    [ "Question 5 for groundhog", true, "Answer explaination" ]
+    [ "Question 1 for groundhog", true, "If correct", "If NOT correct" ],
+    [ "Question 2 for groundhog", true, "If correct", "If NOT correct" ],
+    [ "Question 3 for groundhog", true, "If correct", "If NOT correct" ],
+    [ "Question 4 for groundhog", true, "If correct", "If NOT correct" ],
+    [ "Question 5 for groundhog", true, "If correct", "If NOT correct" ]
 ]
