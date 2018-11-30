@@ -48,9 +48,9 @@ function buildAnswer(answer, animalArray, questionNum) {
 
     var correctAns = getAnswer(animalArray, questionNum);
     if ( answer === correctAns) {
-        document.getElementById('answerBox').innerHTML = animalArray[questionNum][2];
+        document.getElementById('answerBox').innerHTML = "<p class=\"correctColor\">CORRECT!</p>" + animalArray[questionNum][2];
     } else {
-        document.getElementById('answerBox').innerHTML = animalArray[questionNum][3];
+        document.getElementById('answerBox').innerHTML = "<p class=\"incorrectColor\">INCORRECT!</p>" + animalArray[questionNum][2];
     }
 }
 
@@ -114,54 +114,58 @@ function getAnimalData(animal) {
 function displayAnimalIcon(animal, num) {
     document.getElementById('animalIconQuestion').style.display = "block";
     document.getElementById('currentAnimalQ').innerHTML = animal;
+    document.getElementById('currentAnimalIcon').innerHTML = "<img src=\"" + animalIcons[(parseInt(num) - 1)] + "\" alt=\"The head of a cute " + animal.toLowerCase() + "\".\">";
     document.getElementById('currentAnimalNum').innerHTML = num;
 }
 
+// Collection of animal icons
+var animalIcons = ["img/raccoonIcon.svg", "img/opossumIcon.svg", "img/groundhogIcon.svg", "img/batIcon.svg", "img/skunkIcon.svg", "img/beaverIcon.svg"];
+
 // Collection of animal question arrays
 var q_raccoon = [
-    [ "Raccoon babies are called \"Kits.\"", true, "Correct!", "Incorrect- raccoon babies are called \"kits!\"" ],
-    [ "Raccoons are nocturnal.", true, "Correct!", "Incorrect. Raccoons are nocturnal, meaning they are mostly active at night." ],
-    [ "Raccoons closest animal relative is the common housecat.", false, "Correct!", "Incorrect! Raccoons are most closely related to the Ring-tailed Cat." ],
-    [ "Raccoons have opposable thumbs, like humans do.", false, "Correct!", "Incorrect, raccoons have paws that are similar to human hands, but they do not have opposable thumbs." ],
-    [ "Young raccoons stay with their mothers for 1 month.", false, "Correct!", "Incorrect, young raccoons stay with their mothers up to a year!" ]
+    [ "Raccoon babies are called \"Kits.\"", true, "Raccoon babies are indeed called \"kits\"" ],
+    [ "Raccoons are nocturnal.", true, "Raccoons are indeed nocturnal, meaning they are mostly active at night." ],
+    [ "Raccoons closest animal relative is the common housecat.", false, "Raccoons are most closely related to the Ring-tailed Cat."],
+    [ "Raccoons have opposable thumbs, like humans do.", false, "Raccoons have paws that are similar to human hands, but they do not have opposable thumbs." ],
+    [ "Young raccoons stay with their mothers for 1 month.", false, "Young can raccoons stay with their mothers for up to a year!" ]
 ]
 
 var q_opossum = [
-    [ "Opossums are the only marsupial native to Kentucky.", true, "Correct!", "Incorrect. Opossums are the only marsupial native to Kentucky." ],
-    [ "Opossums live in large groups.", false, "Correct!", "Incorrect. Opossums live alone or in pairs." ],
-    [ "Female opossums have 2 to 3 babies in a litter.", false, "Correct, they have 8 to 13 babies per litter!", "Incorrect. Female opossums have 8 to 13 babies per litter!" ],
-    [ "Question 4 for opossum", false, "Correct!", "If NOT correct" ],
-    [ "Question 5 for opossum", false, "Correct!", "If NOT correct" ]
+    [ "Opossums are the only marsupial native to Kentucky.", true, "Opossums are the only marsupial native to Kentucky." ],
+    [ "Opossums live in large groups.", false, "Opossums live alone or in pairs." ],
+    [ "Female opossums have 2 to 3 babies in a litter.", false, "Female opossums have 8 to 13 babies per litter!" ],
+    [ "Opossums can eat 5000 ticks in one season.", true, "Opossums eat up to 5000 ticks each season, helping to combat Lyme disease" ],
+    [ "Baby opossums are called \"pups\".", false, "Baby opossums are called \"joeys\", similarly to kanagaroos, fellow marsupials."]
 ]
 
 var q_bat = [
-    [ "Question 1 for bat", true, "If correct", "If NOT correct" ],
-    [ "Question 2 for bat", true, "If correct", "If NOT correct" ],
-    [ "Question 3 for bat", true, "If correct", "If NOT correct" ],
-    [ "Question 4 for bat", true, "If correct", "If NOT correct" ],
-    [ "Question 5 for bat", true, "If correct", "If NOT correct" ]
+    [ "Bats are flying rodents.", false, "Bats are flying mammals!" ],
+    [ "All bats drink blood.", false, "Only few species of bat drink blood. The Brown Bat found in Kentucky is an insectivore, meaning it eats bugs like mosquitoes and moths!" ],
+    [ "In the wild, bats live up to 19 years.", true, "Wild bats can survive for up to 19 years!" ],
+    [ "The brown bat is the type of bat most commonly found in Kentucky.", true, "The Brown Bat the most common bat species native to Kentucky." ],
+    [ "Most bats in Kentucky have 4 babies at one time.", false, "Most bats in Kentucky only have one pup a year!" ]
 ]
 
 var q_skunk = [
-    [ "Question 1 for skunk", true, "If correct", "If NOT correct" ],
-    [ "Question 2 for skunk", true, "If correct", "If NOT correct" ],
-    [ "Question 3 for skunk", true, "If correct", "If NOT correct" ],
-    [ "Question 4 for skunk", true, "If correct", "If NOT correct" ],
-    [ "Question 5 for skunk", true, "If correct", "If NOT correct" ]
+    [ "Question 1 for skunk", true, "If correct" ],
+    [ "Question 2 for skunk", true, "If correct" ],
+    [ "Question 3 for skunk", true, "If correct" ],
+    [ "Question 4 for skunk", true, "If correct" ],
+    [ "Question 5 for skunk", true, "If correct" ]
 ]
 
 var q_beaver = [
-    [ "Question 1 for beaver", true, "If correct", "If NOT correct" ],
-    [ "Question 2 for beaver", true, "If correct", "If NOT correct" ],
-    [ "Question 3 for beaver", true, "If correct", "If NOT correct" ],
-    [ "Question 4 for beaver", true, "If correct", "If NOT correct" ],
-    [ "Question 5 for beaver", true, "If correct", "If NOT correct" ]
+    [ "Question 1 for beaver", true, "If correct" ],
+    [ "Question 2 for beaver", true, "If correct" ],
+    [ "Question 3 for beaver", true, "If correct" ],
+    [ "Question 4 for beaver", true, "If correct" ],
+    [ "Question 5 for beaver", true, "If correct" ]
 ]
 
 var q_groundhog = [
-    [ "Question 1 for groundhog", true, "If correct", "If NOT correct" ],
-    [ "Question 2 for groundhog", true, "If correct", "If NOT correct" ],
-    [ "Question 3 for groundhog", true, "If correct", "If NOT correct" ],
-    [ "Question 4 for groundhog", true, "If correct", "If NOT correct" ],
-    [ "Question 5 for groundhog", true, "If correct", "If NOT correct" ]
+    [ "Groundhogs are sometimes called Woodchucks.", true, "\"Woodchuck\" is another term for groundhogs." ],
+    [ "Groundhogs hibernate from late October through late February.", true, "Groundhogs usually hibernate from late October through late February." ],
+    [ "Groundhogs yell when they are threatened.", false, "Groundhogs make a whistle-like sound when threatened, earning them the nickname of \"Whistle Pig\"." ],
+    [ "Groundhogs can run very fast.", false, "Groundhogs are slow on land, but are great diggers, climbers, and swimmers." ],
+    [ "Groundhogs chew on sticks, leaves, and tree bark because it tastes good to them.", false, "Perhaps they also taste good, but they chew on sticks, leaves, and tree bark to keep their teeth from getting too long!" ]
 ]
