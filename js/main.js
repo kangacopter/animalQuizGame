@@ -223,11 +223,15 @@ var q_skunk = [
     "Skunks are omnivores and eat both plants and small prey, such as: insects, earthworms, rodents, lizards, eggs, berries, grass, and more. "
   ],
   [
-    "Skunks very easily use their spray when they feel threatened.",
+    "Skunks quickly use their spray when they feel threatened.",
     false,
-    "Skunks try to preserve their supply of their spray chemical, as it is a limited resource. Instead, they will attempt to hiss, stomp, and display threatening poses before resorting to spraying a threat."
+    "Skunks try to preserve their supply of spray chemical, as it is a limited resource. Instead, they will attempt to hiss, stomp, and display threatening poses before resorting to spraying a threat."
   ],
-  ["Skunks are common in suburban areas.", true, "True!"],
+  [
+    "Skunks are common in suburban areas.",
+    true,
+    "True! Skunks are quite often found in suburban areas."
+  ],
   [
     "Skunks are most often hunted by wolves, foxes, and badgers.",
     false,
@@ -247,14 +251,14 @@ var q_beaver = [
     "False. Beavers are the second largest rodent, second to their capybara cousins."
   ],
   [
-    "Beavers' teeth are constantly growing.",
+    "Beavers' teeth are always growing.",
     true,
     "True! Beaver teeth constantly grow so that they do not wear down when they chew wood."
   ],
   [
     "Beavers can live up to 3 years in the wild.",
     false,
-    "False, beavers can live up to 24 years in the wild!"
+    "False... beavers can live up to 24 years in the wild!"
   ],
   [
     "A beaver only maintains one dam for protection and food storage.",
